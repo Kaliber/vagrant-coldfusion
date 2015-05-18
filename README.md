@@ -29,8 +29,8 @@ A NFS share is used on unix based systems but on Windows systems this does not w
 #### And then...
 
 Download these files:
-`https://www.dropbox.com/s/cgmycpeeu7pjelr/ColdFusion_10_WWEJ_linux64.bin?dl=1`
-`https://www.dropbox.com/s/96w4ssf89uzx570/jre-7u15-linux-x64.tar.gz?dl=1`
+`https://www.dropbox.com/s/cgmycpeeu7pjelr/ColdFusion_10_WWEJ_linux64.bin?dl=1`  
+`https://www.dropbox.com/s/96w4ssf89uzx570/jre-7u15-linux-x64.tar.gz?dl=1`  
 to here:  
 `./files/downloads`  
 
@@ -45,6 +45,7 @@ Windows users can use the Git Bash shell to run vagrant.
 
 The Vagrantfile contains the port numbers used, e.g. `http` is accessible via port `:8880`.
 
+Main website: [http://test.local:8880/index.cfm]  
 ColdFusion admin: [http://localhost:8520/CFIDE/administrator] password: 0000  
 Squirrel Webmail: [http://localhost:8880/squirrelmail] (username: vagrant, password: vagrant)  
 
