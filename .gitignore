@@ -1,0 +1,12 @@
+.DS_STORE
+*.box
+.vagrant
+.bashrc
+codebase
+
+!mail/README.md
+mail/*
+Maildir/
+
+!files/downloads/README.md
+files/downloads/*

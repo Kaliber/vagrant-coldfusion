@@ -1,0 +1,45 @@
+#!/bin/sh -e
+### BEGIN INIT INFO
+# Provides: coldfusion
+# Required-Start: $local_fs $remote_fs $network $syslog
+# Required-Stop: $local_fs $remote_fs $network $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# X-Interactive: true
+# Short-Description: Start/stop ColdFusion as service
+### END INIT INFO
+ 
+ENV="env -i LANG=C PATH=/usr/local/bin:/usr/bin:/bin"
+ 
+set -e
+ 
+. /lib/lsb/init-functions
+ 
+test -f /etc/default/rcS && . /etc/default/rcS
+ 
+CFBIN="$ENV /opt/coldfusion10/cfusion/bin/coldfusion"
+INSTANCE_NAME="cfusion"
+ 
+case $1 in
+start)
+echo -n "Starting CF server $INSTANCE_NAME"
+$CFBIN start $INSTANCE_NAME
+echo
+;;
+ 
+stop)
+echo -n "Stopping CF server $INSTANCE_NAME"
+$CFBIN stop $INSTANCE_NAME
+echo
+;;
+restart | force-reload)
+echo -n "Restarting CF server $INSTANCE_NAME"
+$CFBIN restart $INSTANCE_NAME
+echo
+;;
+status)
+echo -n "Getting CF server statuses"
+$CFBIN status $INSTANCE_NAME
+echo
+;;
+esac
